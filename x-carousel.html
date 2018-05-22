@@ -1,4 +1,4 @@
-<link rel="import" type="" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 
 <!--
 ## x-carousel
@@ -22,55 +22,55 @@ some elements and style it as you wish.
  -->
 
 <dom-module id="x-carousel">
-    <style>
-        :host {
-            display: flex;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-        }
-        .button-slot {
-            transition: opacity ease 0.5s;
-            -webkit-transition: opacity ease 0.5s;
-            -ms-transition: opacity ease 0.5s;
-            z-index: 1;
-        }
-        .hidden {
-            visibility: hidden;
-            opacity: 0;
-        }
-        #viewport {
-            flex: 1 0;
-            -webkit-flex: 1 0;
-            -ms-flex: 1 0;
-            display: flex;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-        }
-        #viewport.non-touch {
-            overflow: hidden;
-        }
-        #viewport.touch {
-            overflow-x: scroll;
-            -webkit-overflow-scrolling: touch;
-            -ms-scroll-chaining: chained;
-        }
-        #content {
-            flex: 1 0 auto;
-            -webkit-flex: 1 0 auto;
-            -ms-flex: 1 0 auto;
-            display: flex;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            flex-direction: row;
-            -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-            flex-wrap: nowrap;
-            -webkit-flex-wrap: nowrap;
-            -ms-flex-wrap: nowrap;
-            overflow: visible;
-        }
-    </style>
     <template>
+        <style>
+            :host {
+                display: flex;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+            }
+            .button-slot {
+                transition: opacity ease 0.5s;
+                -webkit-transition: opacity ease 0.5s;
+                -ms-transition: opacity ease 0.5s;
+                z-index: 1;
+            }
+            .hidden {
+                visibility: hidden;
+                opacity: 0;
+            }
+            #viewport {
+                flex: 1 0;
+                -webkit-flex: 1 0;
+                -ms-flex: 1 0;
+                display: flex;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+            }
+            #viewport.non-touch {
+                overflow: hidden;
+            }
+            #viewport.touch {
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch;
+                -ms-scroll-chaining: chained;
+            }
+            #content {
+                flex: 1 0 auto;
+                -webkit-flex: 1 0 auto;
+                -ms-flex: 1 0 auto;
+                display: flex;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                flex-direction: row;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-wrap: nowrap;
+                -webkit-flex-wrap: nowrap;
+                -ms-flex-wrap: nowrap;
+                overflow: visible;
+            }
+        </style>
         <div id="left" class="button-slot" on-tap="_leftTap">
             <slot name="left-button"></slot>
         </div>

@@ -20,13 +20,13 @@
     "tests"
   ],
   "dependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "polymer": "Polymer/polymer#^1.7.1",
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "polymer": "Polymer/polymer#^2.6.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs"
   },
   "devDependencies": {
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
     "web-component-tester": "^5.0.0",
-    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.4.0"
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#^2.0.0"
   }
 }
