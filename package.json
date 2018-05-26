@@ -1,0 +1,31 @@
+{
+  "description": "",
+  "keywords": [
+    "Polymer",
+    "WebComponents",
+    "Carousel"
+  ],
+  "homepage": "https://github.com/KanoComputing/x-carousel",
+  "name": "@kano/x-carousel",
+  "version": "3.0.0-beta.2",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0",
+    "@webcomponents/webcomponentsjs": "2.0.0-beta.2"
+  },
+  "main": "kano-carousel.js",
+  "author": "Kano Computing",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@polymer/iron-component-page": "^3.0.0-pre.18",
+    "@polymer/polymer": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.18",
+    "wct-browser-legacy": "^0.0.1-pre.11",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.18"
+  }
+}

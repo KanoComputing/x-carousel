@@ -5,11 +5,11 @@
         <title>paper-slider test</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-        <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-        <script src="../../web-component-tester/browser.js"></script>
-        <script src="../../iron-test-helpers/mock-interactions.js"></script>
+        <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+        <script src="../../../wct-browser-legacy/browser.js"></script>
+        <script src="../../../@polymer/iron-test-helpers/mock-interactions.js" type="module"></script>
 
-        <link rel="import" href="../x-carousel.html">
+        <script type="module" src="../x-carousel.js"></script>
         <style>
             .cards {
                 display: flex;
@@ -72,37 +72,38 @@
         </template>
     </test-fixture>
 
-    <script>
-        suite('<x-carousel>', function() {
-            var carousel;
-            setup(function() {
-                carousel = fixture('trivial');
-            });
-            test('move', function() {
-                var startOffset = carousel.offset,
-                    updatedOffset;
-                carousel.moveRight();
-                updatedOffset = carousel.offset;
-                assert.isTrue(startOffset > updatedOffset, 'Moving right doesn\'t increment negative offset');
-                carousel.moveLeft();
-                updatedOffset = carousel.offset;
-                assert.isTrue(startOffset === updatedOffset, 'Moving right and then left doesn\'t result in original offset');
-            });
-            test('buttons', function() {
-                var leftButton = carousel.querySelector('[carousel-control-left]'),
-                    rightButton = carousel.querySelector('[carousel-control-right]'),
-                    startOffset = carousel.offset,
-                    updatedOffset;
+    <script type="module">
+import '../x-carousel.js';
+suite('<x-carousel>', function() {
+    var carousel;
+    setup(function() {
+        carousel = fixture('trivial');
+    });
+    test('move', function() {
+        var startOffset = carousel.offset,
+            updatedOffset;
+        carousel.moveRight();
+        updatedOffset = carousel.offset;
+        assert.isTrue(startOffset > updatedOffset, 'Moving right doesn\'t increment negative offset');
+        carousel.moveLeft();
+        updatedOffset = carousel.offset;
+        assert.isTrue(startOffset === updatedOffset, 'Moving right and then left doesn\'t result in original offset');
+    });
+    test('buttons', function() {
+        var leftButton = carousel.querySelector('[carousel-control-left]'),
+            rightButton = carousel.querySelector('[carousel-control-right]'),
+            startOffset = carousel.offset,
+            updatedOffset;
 
-                MockInteractions.tap(rightButton);
-                updatedOffset = carousel.offset;
-                assert.isTrue(startOffset > updatedOffset, 'Tapping right doesn\'t increment negative offset');
-                MockInteractions.tap(leftButton);
-                updatedOffset = carousel.offset;
-                assert.isTrue(startOffset === updatedOffset, 'Tapping right and then left doesn\'t result in original offset');
-            });
-        });
-    </script>
+        MockInteractions.tap(rightButton);
+        updatedOffset = carousel.offset;
+        assert.isTrue(startOffset > updatedOffset, 'Tapping right doesn\'t increment negative offset');
+        MockInteractions.tap(leftButton);
+        updatedOffset = carousel.offset;
+        assert.isTrue(startOffset === updatedOffset, 'Tapping right and then left doesn\'t result in original offset');
+    });
+});
+</script>
 
 </body>
 </html>

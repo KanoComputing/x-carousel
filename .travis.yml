@@ -1,20 +1,18 @@
-# blocklist
 branches:
   except:
-  - gh-pages
+    - gh-pages
 language: node_js
 matrix:
   include:
-    - node_js: "node"
+    - node_js: node
 sudo: required
 dist: trusty
 before_script:
   - mkdir -p vendors
-  - npm install -g web-component-tester bower
-  - export DISPLAY=:99.0
-  - wget 'https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots' -O chrome.zip && unzip chrome.zip
-  - export PATH="$PATH:$(pwd)/chrome-linux"
+  - npm install -g web-component-tester
+  - 'export DISPLAY=:99.0'
+  - 'wget ''https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots'' -O chrome.zip && unzip chrome.zip'
+  - 'export PATH="$PATH:$(pwd)/chrome-linux"'
   - sh -e /etc/init.d/xvfb start
-  - bower i
-script:
-  - wct -l chrome
+script: wct --module-resolution=node --npm -l chrome
+
